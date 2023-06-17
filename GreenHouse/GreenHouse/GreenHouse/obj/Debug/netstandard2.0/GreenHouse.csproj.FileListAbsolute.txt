@@ -1,0 +1,15 @@
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\bin\Debug\netstandard2.0\GreenHouse.deps.json
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\bin\Debug\netstandard2.0\GreenHouse.dll
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\bin\Debug\netstandard2.0\GreenHouse.pdb
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.csproj.AssemblyReference.cache
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.AssemblyInfoInputs.cache
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.AssemblyInfo.cs
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.csproj.CoreCompileInputs.cache
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.dll
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\refint\GreenHouse.dll
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\GreenHouse.pdb
+C:\Users\kunst\source\SEM_4\GreenHouse\GreenHouse\GreenHouse\obj\Debug\netstandard2.0\ref\GreenHouse.dll

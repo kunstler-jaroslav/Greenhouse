@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="GreenHouse.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Text="GREEN" Margin="0, 60, 0, 0" HorizontalOptions="Center" FontSize="50" TextColor="#414D55" FontAttributes="Bold" Padding="0, 0, 0, -10"></Label>
+            <Label Grid.Row="1" Text="HOUSE" Margin="0, 0, 0, 40" HorizontalOptions="Center" FontSize="50" TextColor="#414D55" FontAttributes="Bold" Padding="0, -10, 0, -10"></Label>
+
+            <Frame Grid.Row="2" HeightRequest="200" CornerRadius="25" Margin="15, 0, 15, 0" Padding="5, -10, 5, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <microcharts:ChartView x:Name="chartViewTemp" HeightRequest="130" Grid.Row="0" Grid.ColumnSpan="4"/>
+                    <microcharts:ChartView x:Name="chartViewAir" HeightRequest="130" Grid.Row="0" Grid.ColumnSpan="4"/>
+                    <microcharts:ChartView x:Name="chartViewSoil" HeightRequest="130" Grid.Row="0" Grid.ColumnSpan="4"/>
+                    <microcharts:ChartView x:Name="chartViewWindow" HeightRequest="130" Grid.Row="0" Grid.ColumnSpan="4"/>
+                    <Button Grid.Row="0" Grid.ColumnSpan="4" Clicked="graph_refresh_clicked" BackgroundColor="Transparent"></Button>
+
+                    <CheckBox Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Color="Red" Margin="0, -10, 0, 0" x:Name="chb_temp" CheckedChanged="chb_temp_oncheck"></CheckBox>
+                    <Label VerticalOptions="Start" Grid.Row="2" Grid.Column="0"  
+                           Text="Temperature" TextColor="#414D55" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="10" Padding="0, 0, 0, 10"></Label>
+
+                    <CheckBox Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Color="Green" Margin="0, -10, 0, 0" x:Name="chb_air_hum" CheckedChanged="chb_air_hum_oncheck"></CheckBox>
+                    <Label VerticalOptions="Start" Grid.Row="2" Grid.Column="1"  
+                           Text="Air humidity" TextColor="#414D55" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="10" Padding="0, 0, 0, 10"></Label>
+
+                    <CheckBox Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" Color="Blue" Margin="0, -10, 0, 0" x:Name="chb_soil_hum" CheckedChanged="chb_soil_hum_oncheck"></CheckBox>
+                    <Label VerticalOptions="Start" Grid.Row="2" Grid.Column="2"  
+                           Text="Soil humidity" TextColor="#414D55" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="10" Padding="0, 0, 0, 10"></Label>
+
+                    <CheckBox Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" Color="Gray" Margin="0, -10, 0, 0" x:Name="chb_mot_open" CheckedChanged="chb_mot_open_oncheck"></CheckBox>
+                    <Label VerticalOptions="Start" Grid.Row="2" Grid.Column="3"  
+                           Text="Windows opened" TextColor="#414D55" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="10" Padding="0, 0, 0, 10"></Label>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="3" HeightRequest="250" CornerRadius="25" Margin="15, 0, 15, 0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                        Grid.Row="0" Grid.Column="0"
+                        Margin="10, 15, 0, 0"
+                        FontSize="20" Text="Temperature" TextColor="#414D55" FontAttributes="Bold"></Label>
+
+                    <Label 
+                        x:Name="lbl_temp"
+                        Grid.Row="0" Grid.Column="1"
+                        Margin="10, 15, 0, 0"
+                        FontSize="25" Text="20°" TextColor="#414D55" FontAttributes="Bold"></Label>
+
+
+
+
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <Label 
+                        Margin="10, 15, 0, 0"
+                        FontSize="20" Text="Air" TextColor="#414D55" FontAttributes="Bold"></Label>
+                        <Label 
+                        Margin="10, -10, 0, 0"
+                        FontSize="14" Text="humidity" TextColor="#414D55" FontAttributes="Bold"></Label>
+                    </StackLayout>
+
+                    <Label 
+                        x:Name="lbl_airhum"
+                        Grid.Row="1" Grid.Column="1"
+                        Margin="10, 15, 0, 0"
+                        FontSize="25" Text="85%" TextColor="#414D55" FontAttributes="Bold"></Label>
+                    
+                    
+                    
+
+                    <StackLayout Grid.Row="2" Grid.Column="0">
+                        <Label 
+                        Margin="10, 15, 0, 0"
+                        FontSize="20" Text="Soil" TextColor="#414D55" FontAttributes="Bold"></Label>
+                        <Label 
+                        Margin="10, -10, 0, 0"
+                        FontSize="14" Text="humidity" TextColor="#414D55" FontAttributes="Bold"></Label>
+                    </StackLayout>
+
+                    <Label 
+                        x:Name="lbl_soilhum"
+                        Grid.Row="2" Grid.Column="1"
+                        Margin="10, 15, 0, 0"
+                        FontSize="25" Text="60%" TextColor="#414D55" FontAttributes="Bold"></Label>
+                    
+                    
+                    
+                    
+
+                    <StackLayout Grid.Row="3" Grid.Column="0">
+                        <Label 
+                        Margin="10, 15, 0, 0"
+                        FontSize="20" Text="Windows" TextColor="#414D55" FontAttributes="Bold"></Label>
+                        <Label 
+                        Margin="10, -10, 0, 0"
+                        FontSize="14" Text="opened" TextColor="#414D55" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Label 
+                        x:Name="lbl_windopen"
+                        Grid.Row="3" Grid.Column="1"
+                        Margin="10, 15, 0, 0"
+                        FontSize="25" Text="15%" TextColor="#414D55" FontAttributes="Bold"></Label>
+
+
+                    <Label 
+                        x:Name="lbl_last_refresh"
+                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                        Margin="0, 0, 0, -25"
+                        FontSize="10" Text="" TextColor="#8798a3" FontAttributes="Bold"
+                        VerticalOptions="End" HorizontalOptions="Center"></Label>
+
+
+                    <Button Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" Clicked="data_refresh_clicked" BackgroundColor="Transparent"></Button>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="4" CornerRadius="25" Margin="15, 5, 15, 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalOptions="Start" VerticalOptions="Center" x:Name="lbl_open"
+                           FontSize="10" TextColor="#414D55" Text="Open" FontAttributes="Bold" Grid.Column="0"></Label>
+                    <Label HorizontalOptions="Center" VerticalOptions="End" x:Name="lbl_auto"
+                           FontSize="20" TextColor="#414D55" Text="Automatic" FontAttributes="Bold" Grid.Column="1"></Label>
+                    <Label HorizontalOptions="End" VerticalOptions="Center" x:Name="lbl_close"
+                           FontSize="10" TextColor="#414D55" Text="Close" FontAttributes="Bold" Grid.Column="2"></Label>
+                    <Button Grid.Column="0" BackgroundColor="Transparent" Clicked="btn_open_clicked" HeightRequest="20"></Button>
+                    <Button Grid.Column="1" BackgroundColor="Transparent" Clicked="btn_auto_clicked" HeightRequest="20"></Button>
+                    <Button Grid.Column="2" BackgroundColor="Transparent" Clicked="btn_close_clicked" HeightRequest="20"></Button>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="5" CornerRadius="25" Margin="15, 5, 15, 0">
+                <Grid HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label HorizontalOptions="Center" VerticalOptions="End"
+                           FontSize="20" TextColor="#414D55" Text="Water" FontAttributes="Bold" Grid.Column="1"></Label>
+                    <Button Grid.Column="1" BackgroundColor="Transparent" HeightRequest="20" HorizontalOptions="Center" Clicked="btn_water_clicked"></Button>
+                </Grid>
+            </Frame>
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
+    
